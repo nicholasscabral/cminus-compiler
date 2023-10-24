@@ -488,17 +488,3 @@ class SyntaxAnalyzer:
     def invalid_syntax(self):
         print("Invalid syntax.")
         raise SystemExit
-
-
-# Example usage
-input_string = "int main() { int x; x = 5; return x; }"
-lexer = LexicalAnalyzer(input_string)
-lexer.analyze()
-tokens = lexer.get_tokens()
-
-syntax_analyzer = SyntaxAnalyzer(tokens)
-try:
-    syntax_analyzer.program()
-    print("Syntax analysis successful.")
-except SystemExit:
-    print("Syntax analysis failed.")
